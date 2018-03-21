@@ -37,7 +37,6 @@ defmodule ArcAzure.MixProject do
   defp deps do
     [
       {:arc, "~> 0.8"},
-      {:erlazure, github: "dkataskin/erlazure"},
       {:ex_azure, "~> 0.1.1"}
     ]
   end
