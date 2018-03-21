@@ -21,6 +21,13 @@ Run `mix deps.get` in your shell to fetch the dependencies.
 
 ## Configuration
 
+* Configure arc_azure with your container and cdn url
+```elixir
+config :arc_azure,
+  container: "uploads",
+  cdn_url: "https://" <> System.get_env("AZURE_ACCOUNT") <> ".blob.core.windows.net"
+```
+
 * Configure ex_azure with your Azure credentials
 ```elixir
 config :ex_azure,
@@ -31,9 +38,7 @@ config :ex_azure,
 * Configure the Arc Storage Adapter
 ```elixir
 config :arc,
-  storage: Arc.Storage.Azure,
-  container: "uploads",
-  azure_cdn_url: "https://" <> System.get_env("AZURE_ACCOUNT") <> ".blob.core.windows.net"
+  storage: Arc.Storage.Azure
 ```
 
 ## License
