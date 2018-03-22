@@ -11,8 +11,8 @@ by adding `arc_azure` to your list of dependencies in `mix.exs` (along with othe
 def deps do
   [
     {:arc_azure, "~> 0.1.0"},
-    {:ex_azure, "~> 0.1.1"},
     {:arc, "~> 0.8.0"},
+    {:erlazure, github: "dkataskin/erlazure"},
   ]
 end
 ```
@@ -21,21 +21,20 @@ Run `mix deps.get` in your shell to fetch the dependencies.
 
 ## Configuration
 
-* Configure arc_azure with your container and cdn url
+arc_azure uses the [`ex_azure`](https://github.com/azukiapp/ex_azure) default environment variables so make sure you have set these:
+```sh
+export AZURE_ACCOUNT=<your-azure-account>
+export AZURE_ACCESS_KEY=<your-azure-access-key>
+```
+
+Configure arc_azure with your container and cdn_url:
 ```elixir
 config :arc_azure,
   container: "uploads",
   cdn_url: "https://" <> System.get_env("AZURE_ACCOUNT") <> ".blob.core.windows.net"
 ```
 
-* Configure ex_azure with your Azure credentials
-```elixir
-config :ex_azure,
-  account: System.get_env("AZURE_ACCOUNT"),
-  access_key: System.get_env("AZURE_ACCESS_KEY")
-```
-
-* Configure the Arc Storage Adapter
+Configure the Arc Storage Adapter:
 ```elixir
 config :arc,
   storage: Arc.Storage.Azure
