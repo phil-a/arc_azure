@@ -31,7 +31,7 @@ Configure arc_azure with your container and cdn_url:
 ```elixir
 config :arc_azure,
   container: "uploads",
-  cdn_url: "https://" <> System.get_env("AZURE_ACCOUNT") <> ".blob.core.windows.net"
+  cdn_url: "https://#{System.get_env("AZURE_ACCOUNT")}.blob.core.windows.net"
 ```
 
 Configure the Arc Storage Adapter:
