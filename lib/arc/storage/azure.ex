@@ -66,6 +66,10 @@ defmodule Arc.Storage.Azure do
 
   defp upload_file(destination_dir, file) do
     filename = Path.join(destination_dir, file.file_name)
-    ExAzure.request(:put_block_blob, [container(), filename, File.read!(file.path)])
+    ExAzure.request(:put_block_blob, [container(), filename, get_binary_file(file)])
   end
+
+  defp get_binary_file(%{path: nil} = file), do: file.binary
+  defp get_binary_file(%{path: _} = file), do: File.read!(file.path)
+
 end

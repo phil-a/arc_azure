@@ -10,7 +10,7 @@ by adding `arc_azure` to your list of dependencies in `mix.exs` (along with othe
 ```elixir
 def deps do
   [
-    {:arc_azure, "~> 0.1.0"},
+    {:arc_azure, "~> 0.1.1"},
     {:arc, "~> 0.8.0"},
     {:erlazure, github: "dkataskin/erlazure"},
   ]
