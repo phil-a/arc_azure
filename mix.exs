@@ -4,7 +4,7 @@ defmodule ArcAzure.MixProject do
   def project do
     [
       app: :arc_azure,
-      version: "0.1.1",
+      version: "0.1.2",
       elixir: "~> 1.6",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
@@ -38,7 +38,7 @@ defmodule ArcAzure.MixProject do
     [
       {:arc, "~> 0.8"},
       {:ex_azure, "~> 0.1.1"},
-      {:ex_doc, ">= 0.0.0", only: :dev}
+      {:ex_doc, "~> 0.17", only: :dev}
     ]
   end
 end

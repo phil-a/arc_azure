@@ -10,7 +10,7 @@ by adding `arc_azure` to your list of dependencies in `mix.exs` (along with othe
 ```elixir
 def deps do
   [
-    {:arc_azure, "~> 0.1.1"},
+    {:arc_azure, "~> 0.1.2"},
     {:arc, "~> 0.8.0"},
     {:erlazure, github: "dkataskin/erlazure"},
   ]
@@ -39,6 +39,16 @@ Configure the Arc Storage Adapter:
 config :arc,
   storage: Arc.Storage.Azure
 ```
+
+## Development
+1. Create a development Azure storage container
+2. Create a simple web app with [`arc`](https://github.com/stavro/arc) and [`arc_azure`](https://github.com/phil-a/arc_azure)
+
+Ensure imagemagick is installed:
+`brew install imagemagick`
+
+## Todo:
+* Add Unit Test Coverage
 
 ## License
 
